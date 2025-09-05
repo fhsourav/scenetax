@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "scenetax"
+version = "0.0.1"
+authors = [
+	{ name="fhsourav", email="fhsourav@gmail.com" },
+]
+description = ""
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operating System :: OS Independent",
+]
+LICENSE = "GPL-3.0-only"
+license-files = ["LICENCSE"]
+
+[project.scripts]
+scenetax = "scenetax.cli:main"
