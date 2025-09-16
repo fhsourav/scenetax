@@ -1,0 +1,28 @@
+🎧 60_Sound_and_Media
+For anything that’s non‑textual but supports or extends the project’s world.
+
+Subfolder	Purpose / Examples
+01_Music	Original compositions, ambient tracks, theme songs, licensed music files.
+02_Sound_Effects	Foley, environmental sounds, mechanical noises, magic effects.
+03_Voice	Voice acting takes, narration, character voice samples.
+04_Ambience	Layered background loops for scenes or locations.
+05_Podcasts	Project‑related podcast episodes, interviews, behind‑the‑scenes audio.
+06_Raw_Recordings	Unedited field recordings, raw takes before mixing.
+07_Mixes_and_Masters	Final mastered audio, ready for integration or release.
+08_Media_References	Inspirational or reference audio/video clips (with source info).
+09_Video	Teasers, trailers, motion graphics, promotional videos.
+
+
+🎭 70_Scripts_and_Adaptations
+For turning your core story into other formats — stage, screen, audio drama, game scripts, etc.
+
+Subfolder	Purpose / Examples
+01_Screenplays	Film/TV scripts, formatted to industry standards.
+02_Stage_Plays	Theatre adaptations, scene breakdowns, blocking notes.
+03_Audio_Dramas	Radio play scripts, podcast drama scripts, narration scripts.
+04_Comics_and_Graphic	Comic book or graphic novel scripts, panel breakdowns.
+05_Game_Scripts	Dialogue trees, quest scripts, cutscene scripts for interactive media.
+06_Adaptation_Notes	Planning docs for adapting prose to other media.
+07_Storyboards	Visual scene planning for film, animation, or comics.
+08_Translations	Adapted scripts in other languages.
+09_Pitch_Documents	Treatments, synopses, adaptation proposals for producers.
