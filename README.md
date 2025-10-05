@@ -69,72 +69,66 @@ You can install Scenetax directly from its source code using `pip`.
 
 Scenetax is designed to be used via the command line. The primary commands are structured for clarity and consistency.
 
-### 1\. Project Management
+
+### 1. Project Management
 
 #### Create a New Project
 
 `scenetax newproject <projectname>`
 
   * **Description:** Initializes a new project directory with the standard Scenetax folder structure.
-  * **Example:** `scenetax newproject my_fantasy_novel`
+  * **Example:** `scenetax newproject "My Fantasy Novel"`
 
-#### Create a Project with Legacy Data
+### 2. Entity Creation
 
-Use the `--sequel`, `--prequel`, or `--spinoff` flags to import worldbuilding from an existing project.
+Use the `project` subcommands to generate templates for different project elements:
 
-  * `scenetax newproject <projectname> --sequel <oldproject>`
+  * `scenetax project character --create <name>`
+      * **Description:** Creates markdown file (character sheet) for character <name>.
+      * **Example:** `scenetax project character --create Sir Reginald`
+      * **Versioning:** Use `--version <n>` to create a new version from an existing character sheet.
 
-      * **Description:** Creates a new project based on an existing one, copying all worldbuilding data.
-      * **Example:** `scenetax newproject my_next_novel --sequel my_first_novel`
+  * `scenetax project location --create <name>`
+      * **Description:** Creates markdown file for location <name>.
+      * **Example:** `scenetax project location --create The Whispering Woods`
+      * **Versioning:** Use `--version <n>` to create a new version from an existing location sheet.
 
-  * `scenetax newproject <projectname> --prequel <oldproject> --year <year>`
+  * `scenetax project group --create <name>`
+      * **Description:** Creates markdown file for group <name>.
+      * **Example:** `scenetax project group --create Guardians of the City`
+      * **Versioning:** Use `--version <n>` to create a new version from an existing group sheet.
 
-      * **Description:** Creates a new project as a prequel. It copies worldbuilding data that existed *prior* to the specified `<year>` in the `<oldproject>`.
-      * **Example:** `scenetax newproject ancient_history --prequel my_fantasy_novel --year 100`
+### 3. Writing & Drafting
 
-  * `scenetax newproject <projectname> --spinoff <oldproject> --year <year>`
+Commands to assist with the writing process:
 
-      * **Description:** Creates a new project as a spinoff, copying worldbuilding data from the `<oldproject>` up to a specified `<year>`, allowing for a divergent timeline.
-      * **Example:** `scenetax newproject alternate_timeline --spinoff my_fantasy_novel --year 589`
+  * `scenetax project scene --chapter`
+      * **Description:** Creates a new chapter folder and adds a new scene file within it.
+      * **Example:** `scenetax project scene --chapter`
 
-### 2\. Item Creation
+  * `scenetax project scene --volume`
+      * **Description:** Creates a new volume folder and its subfolders, creates the first chapter and adds a new scene file within it..
+      * **Example:** `scenetax project scene --volume`
 
-Use the `create` command to generate templates for different project elements.
+  * `scenetax project scene`
+      * **Description:** Creates a new scene in the last available chapter, maintaining order.
+      * **Example:** `scenetax project scene`
 
-  * `scenetax project create --character <name1> [name2] ...`
-      * **Description:** Creates markdown files (character sheets) for one or more characters.
-      * **Example:** `scenetax project create --character John Jane "Sir Reginald"`
-  * `scenetax project create --location <name1> [name2] ...`
-      * **Description:** Creates markdown files for one or more locations.
-      * **Example:** `scenetax project create --location "Eldoria" "The Whispering Woods"`
-  * `scenetax project create --group <name1> [name2] ...`
-      * **Description:** Creates markdown files for one or more groups or organizations.
-      * **Example:** `scenetax project create --group "The Guild" "Guardians of the City"`
+### 4. Project-Wide Operations
 
-### 3\. Writing & Drafting
-
-Commands to assist with the writing process.
-
-  * `scenetax project write --scene`
-      * **Description:** Creates a new scene file. It will place the scene in the last available chapter folder, sorting existing scenes to maintain order.
-      * **Example:** `scenetax project write --scene "The Discovery"`
-  * `scenetax project write --scene --newchapter`
-      * **Description:** Creates a new chapter folder and then adds a new scene file within it.
-      * **Example:** `scenetax project write --scene --newchapter "The Confrontation"`
-
-### 4\. Project Management
-
-Commands for project-wide operations.
+Commands for project-wide operations:
 
   * `scenetax project --archive`
-      * **Description:** Archives the entire project directory into a compressed file (e.g., `.tar.gz`) using Rclone and Git.
+      * **Description:** Archives the entire project directory into a compressed file (e.g., `.tar.gz`).
       * **Example:** `scenetax project --archive`
-  * `scenetax project --commit`
-      * **Description:** Stages all changes, commits them with an automated message (e.g., "WIP: Updated scenes"), and pushes to Git.
+
+  * *(Planned)* `scenetax project --commit`
+      * **Description:** Stages all changes, commits them with an automated message, and pushes to Git.
       * **Example:** `scenetax project --commit`
-  * `scenetax project --compile`
+
+  * *(Planned)* `scenetax project compile --epub|--pdf`
       * **Description:** Uses Pandoc to compile your markdown project into a final document format (e.g., PDF, EPUB).
-      * **Example:** `scenetax project --compile --format pdf`
+      * **Example:** `scenetax project compile --epub`
 
 -----
 

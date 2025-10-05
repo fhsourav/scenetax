@@ -1,0 +1,24 @@
+organization_name:
+  description: The formal name of the group or faction.
+  example: The Silent Sentinels
+type_category:
+  description: The category of the organization (e.g., Guild, Criminal Syndicate, Religious Order, Royal Army, Secret Society).
+  example: Ancient Secret Society
+leader_figure:
+  description: The name and title of the primary leader or governing body.
+  example: Grand Master Valerius (The Voice of the Abyss)
+primary_goal:
+  description: The main objective or motivation of the organization.
+  example: To secretly preserve ancient magical artifacts from modern exploitation.
+headquarters_base:
+  description: The main location of operation or meeting place.
+  example: A hidden underground library beneath the main city archives.
+size_influence:
+  description: An estimate of the group's numbers and their level of power in the world or region.
+  example: Small in number (less than 50 active members) but holds immense influence over the city's nobility.
+public_reputation:
+  description: How the general public perceives the organization (e.g., revered heroes, feared terrorists, unknown entity).
+  example: Officially disbanded centuries ago and is now considered a harmless myth or folk tale.
+methods_tactics:
+  description: The typical ways the group achieves its goals (e.g., espionage, open warfare, political maneuvering, charity work).
+  example: Exclusive use of coded messages, blackmail, and subtle manipulation of key political figures.

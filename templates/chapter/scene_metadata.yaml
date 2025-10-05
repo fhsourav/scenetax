@@ -1,0 +1,11 @@
+scene_id: {{ chapter_number }}_{{ scene_number_in_chapter }}
+scene_number_in_chapter: {{ scene_number_in_chapter }}
+scene_focus_goal: {{ scene_focus_goal }}
+time_of_day: {{ time_of_day }}
+location: {{ location }}
+characters: {% for character in characters %}
+  - {{ character }}{% endfor %}
+emotional_beat: {{ emotional_beat }}
+conflict_type: {{ conflict_type }}
+word_count_goal: {{ word_count_estimate }}
+created_at: {{ created_at }}

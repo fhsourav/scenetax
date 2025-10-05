@@ -1,21 +1,30 @@
 given_name:
-    description: The primary personal name of the character.
-    example: Kaelen
+    description: The character's primary personal name.
+    example: Eldrin
 surname:
-    description: The inherited surname or clan name of the character.
-    example: Stonehand
-race:
-    description: The biological or mythological race or species of the character.
-    example: Half-Elf
-age:
-    description: The current age of the character in years (or equivalent life cycles).
-    example: 78
-vocation:
-    description: The primary job, class, or calling of the character.
-    example: Wayfarer
-personality_trait:
-    description: A single, powerful adjective or phrase describing their core nature.
-    example: Cynical
-defining_feature:
-    description: A distinctive physical mark, unique item of clothing, or unusual possession.
-    example: A deep, jagged scar across the right eye
+    description: The character's family or lineage name.
+    example: Whisperwind
+race_species:
+    description: The character's race or species (e.g., Elf, Dwarf, Tiefling, Human).
+    example: Mountain Dwarf
+class_vocation:
+    description: The primary role or profession of the character (e.g., Warrior, Rogue, Wizard, Priest).
+    example: Arcane Trickster Rogue
+background_origin:
+    description: The character's history or origin that shaped them (e.g., Urchin, Noble, Hermit, Soldier).
+    example: Outlander
+alignment:
+    description: The character's moral and ethical perspective (e.g., Lawful Good, Chaotic Neutral, Neutral Evil).
+    example: Chaotic Good
+physical_description:
+    description: Key physical features, including height, weight, hair, eyes, and distinguishing marks.
+    example: Tall, heavily scarred face, long silver braid, and piercing blue eyes.
+personality_traits:
+    description: The character's defining psychological traits and mannerisms (e.g., cynical, generous, stoic, quick to anger).
+    example: Quick-witted, fiercely loyal to friends, but deeply paranoid about strangers.
+defining_skill:
+    description: The single most impressive or important skill the character possesses.
+    example: Master of stealth and lock-picking
+equipment_weapon:
+    description: The character's primary weapon, tool, or essential piece of equipment.
+    example: Two beautifully balanced, serrated daggers and a set of masterwork thieves' tools.

@@ -1,0 +1,10 @@
+chapter_number: {{ chapter_number }}
+chapter_title: {{ chapter_title }}
+point_of_view: {{ point_of_view }}
+primary_location: {{ primary_location }}
+key_event_summary: {{ key_event_summary }}
+characters: {% for character in characters %}
+  - {{ character }}{% endfor %}
+word_count_goal: {{ word_count_goal }}
+narrative_tension_arc: {{ narrative_tension_arc }}
+created_at: {{ created_at }}

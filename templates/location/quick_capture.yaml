@@ -1,0 +1,21 @@
+location_name:
+  description: The primary name of the location.
+  example: The Whispering Citadel
+location_type:
+  description: The category of the location (e.g., City-State, Dungeon, Forest, Ruin, Mountain Pass).
+  example: Ancient Ruined Temple
+geography_setting:
+  description: The physical environment and surrounding landscape (e.g., Deep underground, on a volcanic island, high in the mountains).
+  example: Situated on a mist-shrouded plateau overlooking a dense, petrified forest.
+dominant_faction:
+  description: The primary group, culture, or creature that currently controls or inhabits the area.
+  example: A reclusive cult dedicated to a forgotten earth deity.
+key_features:
+  description: Unique or important structures, landmarks, or magical elements within the location.
+  example: A colossal, monolithic altar carved with glowing abyssal runes.
+current_status:
+  description: What the location is like now (e.g., abandoned, heavily guarded, thriving trade hub).
+  example: Partially flooded, unstable, and rarely visited due to dangerous natural traps.
+historical_significance:
+  description: The location's role in the region's history or lore.
+  example: The site of the final battle of the Age of Shadow, where the tyrant king was defeated.
