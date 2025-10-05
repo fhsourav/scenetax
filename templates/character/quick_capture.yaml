@@ -1,0 +1,21 @@
+given_name:
+    description: The primary personal name of the character.
+    example: Kaelen
+surname:
+    description: The inherited surname or clan name of the character.
+    example: Stonehand
+race:
+    description: The biological or mythological race or species of the character.
+    example: Half-Elf
+age:
+    description: The current age of the character in years (or equivalent life cycles).
+    example: 78
+vocation:
+    description: The primary job, class, or calling of the character.
+    example: Wayfarer
+personality_trait:
+    description: A single, powerful adjective or phrase describing their core nature.
+    example: Cynical
+defining_feature:
+    description: A distinctive physical mark, unique item of clothing, or unusual possession.
+    example: A deep, jagged scar across the right eye

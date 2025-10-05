@@ -34,7 +34,7 @@ def main():
 	newproject_parser.set_defaults(func = newproject, parser = newproject_parser)
 
 	# positional arguments
-	newproject_parser.add_argument("projectname", type=str)
+	newproject_parser.add_argument("projectname", type=str, nargs="+")
 
 	#
 	# project parser
@@ -82,7 +82,29 @@ def main():
 
 	project_character_parser.set_defaults(func = character, parser = project_character_parser)
 
-	project_character_parser.add_argument("-c", "--create", )
+	project_character_parser.add_argument("-c", "--create", metavar="NAME", nargs="+", help="Create a new quick-capture character sheet.")
+	project_character_parser.add_argument("-v", "--version", metavar="FROM", nargs="?", type=int, const=-1, help="Create new version from an existing character sheet.")
+
+	project_character_parser_subparsers = project_character_parser.add_subparsers()
+	character_edit_parser = project_character_parser_subparsers.add_parser(
+		name="edit",
+		formatter_class=argparse.RawDescriptionHelpFormatter,
+		description="Edit an existing character sheet",
+		epilog=""
+	)
+
+	character_edit_parser.set_defaults(func = character, parser = character_edit_parser)
+
+	character_edit_parser.add_argument("name", help="Name of the character")
+	
+	character_edit_group = character_edit_parser.add_mutually_exclusive_group(required=True)
+	character_edit_group.add_argument("-u", "--upgrade", action="store_true", help="Upgrade an existing quick-capture character sheet to a complete character sheet.")
+	character_edit_group.add_argument("-i", "--identity", action="store_true", help="Edit identity section.")
+	character_edit_group.add_argument("-a", "--appearance", action="store_true", help="Edit appearance section.")
+	character_edit_group.add_argument("-p", "--personality", action="store_true", help="Edit personality and psychology section.")
+	character_edit_group.add_argument("-l", "--lore", action="store_true", help="Edit backstory and history section.")
+	character_edit_group.add_argument("-b", "--beliefs", action="store_true", help="Edit beliefs and interests section.")
+	character_edit_group.add_argument("-r", "--role", action="store_true", help="Edit role section.")
 
 	#
 	# project location parser
@@ -95,7 +117,10 @@ def main():
 		epilog=""
 	)
 
-	project_character_parser.set_defaults(func = location, parser = project_location_parser)
+	project_location_parser.set_defaults(func = location, parser = project_location_parser)
+
+	project_location_parser.add_argument("-c", "--create", metavar="NAME", nargs="+", help="Create a new quick-capture location sheet.")
+	project_location_parser.add_argument("-v", "--version", action="store_true", help="Create new version from an existing location sheet.")
 
 	#
 	# project group parser
@@ -108,7 +133,10 @@ def main():
 		epilog=""
 	)
 
-	project_character_parser.set_defaults(func = group, parser = project_group_parser)
+	project_group_parser.set_defaults(func = group, parser = project_group_parser)
+
+	project_group_parser.add_argument("-c", "--create", metavar="NAME", nargs="+", help="Create a new quick-capture group/faction/organization sheet.")
+	project_group_parser.add_argument("-v", "--version", action="store_true", help="Create new version from an existing group/faction/organization character sheet.")
 
 	# 
 	# project scene parser
@@ -134,6 +162,7 @@ def main():
 		sys.exit(0)
 
 	try:
+		print(args.func.__name__)
 		args.func(args)
 	except AttributeError:
 		if args.parser:

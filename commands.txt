@@ -1,17 +1,12 @@
 scenetax newproject <projectname> // creates a new project
-scenetax newproject <projectname> [--sequel <oldproject>] // creates a new project as a sequel from old project copying entire worldbuilding
-scenetax newproject <projectname> [--prequel <oldproject> --year <year>] // creates a new project as a prequel from old project copying worldbuilding prior to the specific year from the world
-scenetax newproject <projectname> [--spinoff <oldproject> --year <year>] // creates a new project as a spinoff from old project copying worldbuilding prior to the specific year from the world
-
-scenetax project create --character <name> // creates a character with the specified name
-scenetax project create --character <name1> <name2> <name3> // creates all the characters <name1>, <name2> and <name3>
-scenetax project create --location <name> // creates a location with the specified name
-scenetax project create --location <name1> <name2> <name3> // creates all the locations <name1>, <name2> and <name3>
-scenetax project create --group <name> // creates a group with the specified name
-scenetax project create --group <name1> <name2> <name3>  // creates all the groups <name1>, <name2> and <name3>
-
-scenetax project write --scene [--newchapter] // looks inside the drafts, creates a new scene in the last chapter sorting in ascending order. if --newchapter is used, creates a new chapter folder and creates the scene file.
 
 scenetax project --archive // archives the entire project as .tar.gz
 scenetax project --commit // adds the changes and commits with automated commit message
-scenetax project --compile // compiles the entire novel using pandoc
+scenetax project compile --epub // compiles as epub using pandoc
+scenetax project compile --pdf // compiles as pdf using pandnoc
+
+scenetax project character --create <name> // creates a character with the specified name
+scenetax project create --location <name> // creates a location with the specified name
+scenetax project create --group <name> // creates a group with the specified name
+
+scenetax project write --scene [--newchapter] // looks inside the drafts, creates a new scene in the last chapter sorting in ascending order. if --newchapter is used, creates a new chapter folder and creates the scene file.

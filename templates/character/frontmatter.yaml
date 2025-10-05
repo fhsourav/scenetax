@@ -1,0 +1,11 @@
+id: {{ id }}
+name: {{ name }}
+version: {{ version }}
+effective_from: # Which chapter this version of this character is effective from
+effective_to: # Which chapter this version of this character is effective to
+tags: {% for tag in tags %}
+	- {{ tag }}{% endfor %}
+notes: {% for note in notes %}
+	- {{ note }}{% endfor %}
+created_at: {{ created_at }}
+updated_at: {{ updated_at }}
