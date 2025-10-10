@@ -171,7 +171,7 @@ def newproject(args):
 	}
 	project_scenetax = project_path / "scenetax.md"
 	save_frontmatter_to_file(project_scenetax, frontmatter, "")
-	print(f"Project has been created at {project_path}")
+	print(f"Project has been created at '{project_path}'")
 
 
 
@@ -285,7 +285,7 @@ def create(parser: argparse.ArgumentParser, category: Category, name_parts: list
 
 	# Save the new entity file
 	save_frontmatter_to_file(filepath, frontmatter, datasheet)
-	print(f"{category.name.capitalize()} has been created.")
+	print(f"{category.name.capitalize()} has been created at: '{filepath}'")
 
 
 
@@ -339,6 +339,7 @@ def scene(args):
 	)
 
 	now = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S.%f")
+	cwd = pathlib.Path.cwd()
     
 	# Locate volumes and determine current volume
 	volumes_path = pathlib.Path.cwd() / "20_Drafts"
@@ -347,8 +348,10 @@ def scene(args):
 
 	# If --volume is specified, create a new volume and its folders
 	if args.volume:
+		print("Creating new volume...")
 		current_volume = volumes_path / f"Volume_{len(volumes) + 1:02}"
 		current_volume.mkdir()
+		print(f"Successfully created directory '{current_volume.relative_to(cwd)}'")
 		new_folders = [
 			current_volume / "01_Chapters",
 			current_volume / "02_Alt_Versions",
@@ -356,6 +359,7 @@ def scene(args):
 		]
 		for folder in new_folders:
 			folder.mkdir()
+			print(f"Successfully created directory '{folder.relative_to(cwd)}'")
 
 	# Locate chapters and determine latest chapter
 	chapter_path = current_volume / "01_Chapters"
@@ -363,6 +367,7 @@ def scene(args):
     
 	# If --chapter is specified or no chapters exist, create a new chapter
 	if args.chapter or len(chapters) == 0:
+		print("Creating new chapter...")
 		latest_chapter = chapter_path / f"chapter_{len(chapters) + 1:02}"
 		latest_chapter.mkdir()
 
@@ -376,10 +381,13 @@ def scene(args):
 
 		chapter_metadata = chapter_metadata_template.render(chapter_context)
 		chapter_metadata_path.write_text(chapter_metadata)
+
+		print(f"Successfully created directory '{latest_chapter.relative_to(cwd)}'")
 	else:
 		latest_chapter = chapters[-1]
 
 	# Create new scene in the latest chapter
+	print("Creating new scene...")
 	scenes = [scene for scene in latest_chapter.glob("scene_*")]
 	new_scene = latest_chapter / f"scene_{len(scenes) + 1:02}.md"
 
@@ -394,3 +402,5 @@ def scene(args):
 	scene_frontmatter = yaml.safe_load(scene_metadata_rendered)
 
 	save_frontmatter_to_file(new_scene, scene_frontmatter, "")
+
+	print(f"Successfully created scene: '{new_scene.relative_to(cwd)}'")
